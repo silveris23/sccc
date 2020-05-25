@@ -10,9 +10,18 @@
         :multiple="multiple"
       >
         <v-container class="pa-12">
-          <v-row justify="center" dense>
-            <v-col cols="6" class="text-left"><span>매우 그렇지 않다</span></v-col>
-            <v-col cols="6" class="text-right"><span>매우 그렇다</span></v-col>
+          <v-row
+            justify="center"
+            dense
+          >
+            <v-col
+              cols="6"
+              class="text-left"
+            ><span>매우 그렇지 않다</span></v-col>
+            <v-col
+              cols="6"
+              class="text-right"
+            ><span>매우 그렇다</span></v-col>
             <v-col
               v-for="n in 10"
               :key="n"
@@ -26,10 +35,14 @@
                   height="70"
                   @click="toggle"
                 >
-                <div v-if="!active" class="display-1 flex-grow-1 text-center"><span >{{n}}</span></div>
+                  <div
+                    v-if="!active"
+                    class="display-1 flex-grow-1 text-center"
+                  ><span>{{n}}</span></div>
 
                   <v-scroll-y-transition>
-                    <div style="position: absolute;  top: 50%; left: 50%; transform: translate(-50%, -50%);"
+                    <div
+                      style="position: absolute;  top: 50%; left: 50%; transform: translate(-50%, -50%);"
                       v-if="active"
                       class="display-3 flex-grow-1 text-center"
                     >
