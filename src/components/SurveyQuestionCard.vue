@@ -3,7 +3,7 @@
     color="#13547a"
     dark
     height="100%"
-    min-width="900"
+    width="100%"
   >
     <!-- <v-img
       class="white--text"
@@ -20,43 +20,57 @@
       </v-icon>
       <span class="title">Master</span>
     </v-card-title>
-    <div
-      style="width: 70%;"
-      class="px-12 mb-12"
-    >
-      <p class="headline font-weight-bold">
-        <span>1. </span> <span>먼저, 나만의 영문 닉네임을 만들어 주세요</span>
-      </p>
-
-      <v-text-field
-        class="mx-5"
-        v-model="nickname"
-        :rules="nameRules"
-        :counter="10"
-        label="닉네임"
-        placeholder="여기에 닉네임을 써주세요"
-        required
-      />
-    </div>
-    <v-card-actions class="px-12">
-      <!-- color="#80d0c7" -->
-      <v-btn
-        color="cyan darken-1"
-        large
-        :disabled="!(nickname.length > 0)"
-        width="100"
-        class="title"
-        @click="next"
-      >확인<v-icon right>mdi-check</v-icon>
-      </v-btn>
-
-    </v-card-actions>
+    <open-ended-survey
+      class="mx-6"
+      v-if="questionType === 'openEnded'"
+      :q-number="questionNumber"
+      :q-message="questionMessage"
+      :q-title="questionTitle"
+      @nextSlide="next"
+    />
+    <ordering-survey
+      class="ml-12"
+      v-if="questionType === 'ordering'"
+      :items="items"
+      @nextSlide="next"
+    />
+    <likert-survey
+      v-if="questionType === 'likert'"
+      @nextSlide="next"
+    />
     <!-- </v-img> -->
   </v-card>
 </template>
 
 <script>
+import OpenEndedSurvey from '@/components/OpenEndedSurvey'
+import OrderingSurvey from '@/components/OrderingSurvey'
+import LikertSurvey from '@/components/LikertScaleSurvey'
 export default {
+  components: {
+    OpenEndedSurvey,
+    OrderingSurvey,
+    LikertSurvey
+  },
+  props: {
+    questionNumber: {
+      type: Number,
+      default: 0
+    },
+    questionMessage: {
+      type: String,
+      default: '정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.'
+    },
+    questionTitle: {
+      type: String,
+      default: '정당의 목적'
+    },
+    questionType: {
+      type: String,
+      default: 'openEnded'
+
+    }
+  },
   data () {
     return {
       valid: false,
@@ -65,6 +79,14 @@ export default {
         v => !!v || '닉네임을 써주세요',
         v => v.length <= 10 || '10글자 미만으로 해주세요',
       ],
+      items: [
+        { title: '돈', subTitle: '경제적 안정' },
+        { title: '집', subTitle: '가족 간 배려, 소통' },
+        { title: '일', subTitle: '전문성/직업의 연속성' },
+        { title: '벗', subTitle: '외롭지 않는 삶. 네트웍' },
+        { title: '낙', subTitle: '즐거운 꺼리들' },
+        { title: '건강', subTitle: '몸과 마음의 건강' }
+      ]
     }
   },
   methods: {

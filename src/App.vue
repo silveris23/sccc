@@ -50,8 +50,8 @@ export default {
   data: () => ({
     //
   }),
-  computed:{
-    theme(){
+  computed: {
+    theme () {
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
     }
   }
