@@ -46,6 +46,10 @@ export default {
     HoverCard,
   },
   props: {
+    qId: {
+      type: String,
+      default: ''
+    },
     qMessage: {
       type: String,
       default: '지금까지 살면서 가장 잘 이루어 놓은 것은 ? (우선순위대로 선택 해주세요)'
@@ -55,7 +59,7 @@ export default {
       default: 1
     },
     items: {
-      type: Object,
+      type: Array,
       default: () => [],
     }
 

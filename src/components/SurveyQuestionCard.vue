@@ -18,7 +18,7 @@
       >
         mdi-comment-question-outline
       </v-icon>
-      <span class="title">Master</span>
+      <span class="title">{{questionCategory}}</span>
     </v-card-title>
     <open-ended-survey
       class="mx-6"
@@ -26,16 +26,24 @@
       :q-number="questionNumber"
       :q-message="questionMessage"
       :q-title="questionTitle"
+      :email-type="emailType"
+      :q-predicate="questionPredicate"
+      :max-text="maxText"
       @nextSlide="next"
     />
     <ordering-survey
       class="ml-12"
       v-if="questionType === 'ordering'"
+      :q-number="questionNumber"
+      :q-message="questionMessage"
       :items="items"
       @nextSlide="next"
     />
     <likert-survey
       v-if="questionType === 'likert'"
+      :q-number="questionNumber"
+      :q-message="questionMessage"
+      :q-title="questionTitle"
       @nextSlide="next"
     />
     <!-- </v-img> -->
@@ -53,6 +61,10 @@ export default {
     LikertSurvey
   },
   props: {
+    questionCategory: {
+      type: String,
+      default: 'Master'
+    },
     questionNumber: {
       type: Number,
       default: 0
@@ -68,17 +80,23 @@ export default {
     questionType: {
       type: String,
       default: 'openEnded'
-
-    }
+    },
+    questionPredicate: {
+      type: String,
+      default: ''
+    },
+    emailType: {
+      type: Boolean,
+      default: false
+    },
+    maxText: {
+      type: Number,
+      default: 10
+    },
   },
   data () {
     return {
       valid: false,
-      nickname: '',
-      nameRules: [
-        v => !!v || '닉네임을 써주세요',
-        v => v.length <= 10 || '10글자 미만으로 해주세요',
-      ],
       items: [
         { title: '돈', subTitle: '경제적 안정' },
         { title: '집', subTitle: '가족 간 배려, 소통' },

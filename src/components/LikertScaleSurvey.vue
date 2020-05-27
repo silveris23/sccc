@@ -6,12 +6,10 @@
       </v-card-title>
       <v-item-group
         v-model="selected"
-        :mandatory="mandatory"
-        :multiple="multiple"
       >
         <v-container class="pa-12">
           <v-row
-            justify="center"
+            class="justify-space-between"
             dense
           >
             <v-col
@@ -33,7 +31,7 @@
                   class="d-flex align-center"
                   outlined
                   height="70"
-                  @click="toggle"
+                  @click="toggle();confirm()"
                 >
                   <div
                     v-if="!active"
@@ -62,6 +60,7 @@
         large
         width="100"
         class="title"
+        :disabled="!selected"
         @click="confirm"
       >확인<v-icon right>mdi-check</v-icon>
       </v-btn>
@@ -72,6 +71,10 @@
 <script>
 export default {
   props: {
+    qId: {
+      type: String,
+      default: ''
+    },
     qNumber: {
       type: Number,
       default: 0
