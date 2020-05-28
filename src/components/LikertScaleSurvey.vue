@@ -4,22 +4,48 @@
       <v-card-title class="headline font-weight-bold">
         {{`${qNumber}.  ${qMessage}`}}
       </v-card-title>
-      <v-item-group
-        v-model="selected"
-      >
+      <v-item-group v-model="selected">
         <v-container class="pa-12">
           <v-row
             class="justify-space-between"
             dense
           >
-            <v-col
-              cols="6"
-              class="text-left"
-            ><span>매우 그렇지 않다</span></v-col>
-            <v-col
-              cols="6"
-              class="text-right"
-            ><span>매우 그렇다</span></v-col>
+            <template v-if="answerList.length === 0">
+              <v-col
+                cols="2"
+                class="text-left"
+              >
+                <span>
+                  매우 그렇지 않다
+                </span>
+              </v-col>
+              <v-col
+                cols="2"
+                class="text-right"
+              >
+                <span>
+                  매우 그렇다
+                </span>
+              </v-col>
+            </template>
+            <template v-else>
+              <v-col
+                v-for="n in 10"
+                :key="'a'+n"
+                cols="1"
+                class="text-center"
+              >
+                <span>
+                  {{answerList.filter(a => a.score === n).length ===1 ? answerList.filter(a => a.score === n)[0].message : ''}}
+                </span>
+              </v-col>
+            </template>
+          </v-row>
+          <v-row
+            class="justify-space-between"
+            dense
+          >
+
             <v-col
               v-for="n in 10"
               :key="n"
@@ -76,8 +102,8 @@ export default {
       default: ''
     },
     qNumber: {
-      type: Number,
-      default: 0
+      type: String,
+      default: ''
     },
     qMessage: {
       type: String,
@@ -87,6 +113,10 @@ export default {
       type: String,
       default: ''
     },
+    answerList: {
+      type: Array,
+      default: () => []
+    }
   },
   data () {
     return {

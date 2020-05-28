@@ -9,7 +9,7 @@
         {{`${qNumber}.  ${qMessage}`}}
       </v-card-title>
       <div class="d-flex">
-        <div style="width: 60%">
+        <div style="width: 300px">
           <v-text-field
             class="mx-5"
             v-model="answer"
@@ -21,10 +21,11 @@
             @keyup.enter="confirm"
           />
         </div>
-        <p
+        <div
           v-if="qPredicate.length > 0"
-          class="headline"
-        > {{qPredicate}}</p>
+          class="headline pt-5"
+        > <span>{{qPredicate}}</span>
+        </div>
       </div>
     </v-card>
     <v-card-actions>
@@ -58,8 +59,8 @@ export default {
       default: ''
     },
     qNumber: {
-      type: Number,
-      default: 0
+      type: String,
+      default: "qNumber"
     },
     qMessage: {
       type: String,
@@ -102,7 +103,6 @@ export default {
   methods: {
     confirm () {
       this.valid && this.$emit('nextSlide')
-
     }
   }
 }

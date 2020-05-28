@@ -36,14 +36,15 @@
       v-if="questionType === 'ordering'"
       :q-number="questionNumber"
       :q-message="questionMessage"
-      :items="items"
+      :items="answerList"
       @nextSlide="next"
     />
     <likert-survey
-      v-if="questionType === 'likert'"
+      v-if="questionType === 'likertScale'"
       :q-number="questionNumber"
       :q-message="questionMessage"
       :q-title="questionTitle"
+      :answer-list="answerList"
       @nextSlide="next"
     />
     <!-- </v-img> -->
@@ -66,8 +67,8 @@ export default {
       default: 'Master'
     },
     questionNumber: {
-      type: Number,
-      default: 0
+      type: String,
+      default: 'questionNumber'
     },
     questionMessage: {
       type: String,
@@ -93,6 +94,10 @@ export default {
       type: Number,
       default: 10
     },
+    answerList: {
+      type: Array,
+      default: ()=> []
+    }
   },
   data () {
     return {

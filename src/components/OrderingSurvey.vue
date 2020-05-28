@@ -55,8 +55,8 @@ export default {
       default: '지금까지 살면서 가장 잘 이루어 놓은 것은 ? (우선순위대로 선택 해주세요)'
     },
     qNumber: {
-      type: Number,
-      default: 1
+      type: String,
+      default: "1"
     },
     items: {
       type: Array,
