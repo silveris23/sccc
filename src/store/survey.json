@@ -16,7 +16,7 @@
     "id": "일반-기본-2",
     "number": "",
     "title": "이메일",
-    "message": "상담결과를 받으실 이메일 주소를 남겨주세요",
+    "message": "생애연표를 받으실 이메일 주소를 남겨주세요",
     "isEmail": true,
     "predecate": "",
     "category": "Master",
@@ -75,7 +75,7 @@
       },
       {
         "title": "집",
-        "subTitle": "가족 간 배려, 소통"
+        "subTitle": "가족간 배려, 소통"
       },
       {
         "title": "일",

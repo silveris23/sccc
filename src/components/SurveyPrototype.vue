@@ -10,9 +10,8 @@
       </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col
-        class="mb-5"
-        cols="8"
+      <div
+        class="mb-5 content-box"
       >
         <h2 class="headline font-weight-bold mb-3 text-center">
           안녕하세요
@@ -33,6 +32,7 @@
               :question-number="item.number"
               :question-message="item.message"
               :question-title="item.title"
+              :question-sub-category="item.subCategory"
               :max-text="item.maxText"
               :question-predicate="item.predicate"
               :answer-list="item.answerList"
@@ -132,10 +132,10 @@
           <div class="swiper-button-next" slot="button-next" /> -->
 
         </swiper>
-      </v-col>
-      <v-col
+      </div>
+      <div
         cols="8"
-        class="justify-end d-flex align-center"
+        class="justify-end d-flex align-center content-box"
       >
         <v-progress-linear :value="progress()" />
         <v-btn
@@ -152,7 +152,7 @@
         >
           <v-icon large>mdi-arrow-down-drop-circle-outline</v-icon>
         </v-btn>
-      </v-col>
+      </div>
     </v-row>
   </v-container>
 </template>
@@ -220,5 +220,11 @@ export default {
 }
 .box {
   // border: 2px solid red;
+}
+.content-box {
+  width: 980px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

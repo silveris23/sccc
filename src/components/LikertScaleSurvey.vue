@@ -2,7 +2,7 @@
   <div>
     <v-card color="#13547a">
       <v-card-title class="headline font-weight-bold">
-        {{`${qNumber}.  ${qMessage}`}}
+        {{`${qNumber}.`}} <v-chip v-if="subCategory !== ''">{{subCategory}}</v-chip> {{`${qMessage}`}}
       </v-card-title>
       <v-item-group v-model="selected">
         <v-container class="pa-12">
@@ -110,6 +110,10 @@ export default {
       default: ''
     },
     qTitle: {
+      type: String,
+      default: ''
+    },
+    subCategory:{
       type: String,
       default: ''
     },

@@ -20,7 +20,7 @@
       </v-icon>
       <span class="title">{{questionCategory}}</span>
     </v-card-title>
-    <open-ended-survey
+    <!-- <open-ended-survey
       class="mx-6"
       v-if="questionType === 'openEnded'"
       :q-number="questionNumber"
@@ -30,7 +30,7 @@
       :q-predicate="questionPredicate"
       :max-text="maxText"
       @nextSlide="next"
-    />
+    /> -->
     <ordering-survey
       class="ml-12"
       v-if="questionType === 'ordering'"
@@ -45,6 +45,7 @@
       :q-message="questionMessage"
       :q-title="questionTitle"
       :answer-list="answerList"
+      :sub-category="questionSubCategory"
       @nextSlide="next"
     />
     <!-- </v-img> -->
@@ -52,12 +53,12 @@
 </template>
 
 <script>
-import OpenEndedSurvey from '@/components/OpenEndedSurvey'
+// import OpenEndedSurvey from '@/components/OpenEndedSurvey'
 import OrderingSurvey from '@/components/OrderingSurvey'
 import LikertSurvey from '@/components/LikertScaleSurvey'
 export default {
   components: {
-    OpenEndedSurvey,
+    // OpenEndedSurvey,
     OrderingSurvey,
     LikertSurvey
   },
@@ -65,6 +66,10 @@ export default {
     questionCategory: {
       type: String,
       default: 'Master'
+    },
+    questionSubCategory:{
+      type: String,
+      default: ''
     },
     questionNumber: {
       type: String,
