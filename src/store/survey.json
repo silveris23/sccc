@@ -35,27 +35,33 @@
     "answerList": [
       {
         "title": "돈",
-        "subTitle": "경제적 안정"
+        "subTitle": "경제적 안정",
+        "icon": "mdi-currency-krw"
       },
       {
         "title": "집",
-        "subTitle": "가족 간 배려, 소통"
+        "subTitle": "가족 간 배려, 소통",
+        "icon": "mdi-home"
       },
       {
         "title": "일",
-        "subTitle": "전문성/직업의 연속성"
+        "subTitle": "전문성/직업의 연속성",
+        "icon": "mdi-fountain-pen"
       },
       {
         "title": "벗",
-        "subTitle": "외롭지 않는 삶. 네트웍"
+        "subTitle": "외롭지 않는 삶. 네트웍",
+        "icon": "mdi-account-group"
       },
       {
         "title": "낙",
-        "subTitle": "즐거운 꺼리들"
+        "subTitle": "즐거운 꺼리들",
+        "icon": "mdi-emoticon-happy-outline"
       },
       {
         "title": "건강",
-        "subTitle": "몸과 마음의 건강"
+        "subTitle": "몸과 마음의 건강",
+        "icon": "mdi-hospital-box-outline"
       }
     ]
   },

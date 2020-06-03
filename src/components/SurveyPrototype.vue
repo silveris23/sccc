@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="text-center">
-      <v-col class="mb-4">
+      <v-col class="mb-1">
         <h1 class="display-2 font-weight-bold mb-3">
           생애연표
         </h1>
@@ -11,9 +11,9 @@
     </v-row>
     <v-row justify="center">
       <div
-        class="mb-5 content-box"
+        class="mb-1 content-box"
       >
-        <h2 class="headline font-weight-bold mb-3 text-center">
+        <h2 class="headline font-weight-bold mb-1 text-center">
           안녕하세요
         </h2>
         <swiper
@@ -174,7 +174,7 @@ export default {
       slidesPerView: 1,
       spaceBetween: 30,
       // mousewheel: true,
-      speed: 500,
+      speed: 300,
       allowTouchMove: false,
       // allowSlidePrev: false,
       // allowSlideNext: false,
@@ -210,7 +210,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .swiper {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
   .swiper-slide {
     display: flex;

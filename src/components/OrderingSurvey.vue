@@ -14,7 +14,6 @@
             <hover-card
               class="ma-2"
               :next-number="nextNumber"
-              :order-number="order[i]"
               :title="item.title"
               :sub-title="item.subTitle"
               @activate="activate"
@@ -41,9 +40,11 @@
 
 <script>
 import HoverCard from '@/components/HoverCard'
+import draggable from 'vuedraggable'
 export default {
   components: {
     HoverCard,
+    draggable,
   },
   props: {
     qId: {
@@ -68,7 +69,6 @@ export default {
     maxSelectedNumber: 0,
     nextNumber: 1,
     selected: [],
-    order: []
   }),
   methods: {
     confirm () {
@@ -82,9 +82,6 @@ export default {
     }
   },
   computed: {
-    // order() {
-    //   return this.data
-    // }
   },
 }
 </script>
