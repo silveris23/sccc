@@ -77,27 +77,33 @@
     "answerList": [
       {
         "title": "돈",
-        "subTitle": "경제적 안정"
+        "subTitle": "경제적 안정",
+        "icon": "mdi-currency-krw"
       },
       {
         "title": "집",
-        "subTitle": "가족간 배려, 소통"
+        "subTitle": "가족 간 배려, 소통",
+        "icon": "mdi-home"
       },
       {
         "title": "일",
-        "subTitle": "전문성/직업의 연속성"
+        "subTitle": "전문성/직업의 연속성",
+        "icon": "mdi-fountain-pen"
       },
       {
         "title": "벗",
-        "subTitle": "외롭지 않는 삶. 네트웍"
+        "subTitle": "외롭지 않는 삶. 네트웍",
+        "icon": "mdi-account-group"
       },
       {
         "title": "낙",
-        "subTitle": "즐거운 꺼리들"
+        "subTitle": "즐거운 꺼리들",
+        "icon": "mdi-emoticon-happy-outline"
       },
       {
         "title": "건강",
-        "subTitle": "몸과 마음의 건강"
+        "subTitle": "몸과 마음의 건강",
+        "icon": "mdi-hospital-box-outline"
       }
     ]
   },
@@ -297,25 +303,25 @@
     "subCategory": "건강",
     "message": "건강검진 결과 대사증후군 항목(복부 비만, 고혈압, 고혈당, 고 중성지방혈증, 저 HDL 콜레스테롤 혈증)중, 몇개가 증상이 있는지? (10_1개 미만, 8_2개, 6_3개, 4_4개, 2_5개)",
     "id": "건강-likert-2",
-    "answerList":[
+    "answerList": [
       {
-        "score":10,
+        "score": 10,
         "message": "1개 미만"
       },
       {
-        "score":8,
+        "score": 8,
         "message": "2개"
       },
       {
-        "score":6,
+        "score": 6,
         "message": "3개"
       },
       {
-        "score":4,
+        "score": 4,
         "message": "4개"
       },
       {
-        "score":2,
+        "score": 2,
         "message": "5개"
       }
     ]
@@ -337,25 +343,25 @@
     "subCategory": "건강",
     "message": "30분 이상의 시간이 소요되는 운동을 자주 하는 편이다 (10_매일, 8_주3회, 6_주2~3회, 4_주 1회, 2_거의 안함)",
     "id": "건강-likert-4",
-    "answerList":[
+    "answerList": [
       {
-        "score":10,
+        "score": 10,
         "message": "매일"
       },
       {
-        "score":8,
+        "score": 8,
         "message": "주3회"
       },
       {
-        "score":6,
+        "score": 6,
         "message": "주2~3회"
       },
       {
-        "score":4,
+        "score": 4,
         "message": "주1회"
       },
       {
-        "score":2,
+        "score": 2,
         "message": "거의 안함"
       }
     ]
@@ -404,25 +410,25 @@
     "subCategory": "건강",
     "message": "평소 음주를 전혀 하지 않는다 (10_전혀안함, 8_주1회, 6_주2~3회, 4_주 5회, 2_거의 매일)",
     "id": "건강-likert-9",
-    "answerList":[
+    "answerList": [
       {
-        "score":10,
+        "score": 10,
         "message": "전혀안함"
       },
       {
-        "score":8,
+        "score": 8,
         "message": "주1회"
       },
       {
-        "score":6,
+        "score": 6,
         "message": "주2~3회"
       },
       {
-        "score":4,
+        "score": 4,
         "message": "주5회"
       },
       {
-        "score":2,
+        "score": 2,
         "message": "거의 매일"
       }
     ]
@@ -435,25 +441,25 @@
     "subCategory": "건강",
     "message": "평소 흡연을 전혀 하지 않는다 (10_전혀안함, 8_1일_10개피 미만, 6_1일_10~20개피, 4_1일_20~40개피, 2_1일_40개피 이상)",
     "id": "건강-likert-10",
-    "answerList":[
+    "answerList": [
       {
-        "score":10,
+        "score": 10,
         "message": "전혀안함"
       },
       {
-        "score":8,
+        "score": 8,
         "message": "일 10개피 미만"
       },
       {
-        "score":6,
+        "score": 6,
         "message": "일 10~20개피"
       },
       {
-        "score":4,
+        "score": 4,
         "message": "일 20~40개피"
       },
       {
-        "score":2,
+        "score": 2,
         "message": "일 40개피 이상"
       }
     ]
