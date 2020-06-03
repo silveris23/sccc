@@ -7,7 +7,7 @@
       <v-container>
         <v-row class="px-10">
           <v-col
-            v-for="(item,i) in items"
+            v-for="(item) in items"
             :key="item.title"
             cols="4"
           >
@@ -40,11 +40,9 @@
 
 <script>
 import HoverCard from '@/components/HoverCard'
-import draggable from 'vuedraggable'
 export default {
   components: {
     HoverCard,
-    draggable,
   },
   props: {
     qId: {

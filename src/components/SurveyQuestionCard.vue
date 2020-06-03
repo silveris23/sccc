@@ -54,7 +54,7 @@
 
 <script>
 import OpenEndedSurvey from '@/components/OpenEndedSurvey'
-import OrderingSurvey from '@/components/OrderingSurvey'
+import OrderingSurvey from '@/components/OrderingSurveyAlt'
 import LikertSurvey from '@/components/LikertScaleSurvey'
 export default {
   components: {
