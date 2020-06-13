@@ -1,23 +1,14 @@
 <template>
-  <v-card
-    height="100%"
-    width="100%"
-  >
+  <v-card height="100%" width="100%" color="transparent" flat>
     <!-- <v-img
       class="white--text"
       position="top"
       src="https://picsum.photos/1024/640?random"
       gradient="to top right, rgba(19,84,122,1), rgba(128,208,199,.5)"
-    > -->
+    >-->
     <div class="d-flex justify-space-between">
       <div class="d-flex survey-category">
-        <v-icon
-          large
-          left
-          color="secondary"
-        >
-          mdi-comment-question-outline
-        </v-icon>
+        <v-icon large left color="secondary">mdi-comment-question-outline</v-icon>
         <span>{{questionCategory}}</span>
       </div>
       <div class="survey-category-border"></div>
@@ -55,9 +46,9 @@
 </template>
 
 <script>
-import OpenEndedSurvey from '@/components/OpenEndedSurvey'
-import OrderingSurvey from '@/components/OrderingSurveyAlt'
-import LikertSurvey from '@/components/LikertScaleSurvey'
+import OpenEndedSurvey from "@/components/OpenEndedSurvey";
+import OrderingSurvey from "@/components/OrderingSurveyAlt";
+import LikertSurvey from "@/components/LikertScaleSurvey";
 export default {
   components: {
     OpenEndedSurvey,
@@ -67,31 +58,32 @@ export default {
   props: {
     questionCategory: {
       type: String,
-      default: 'Master'
+      default: "Master"
     },
     questionSubCategory: {
       type: String,
-      default: ''
+      default: ""
     },
     questionNumber: {
       type: String,
-      default: 'questionNumber'
+      default: "questionNumber"
     },
     questionMessage: {
       type: String,
-      default: '정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.'
+      default:
+        "정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다."
     },
     questionTitle: {
       type: String,
-      default: '정당의 목적'
+      default: "정당의 목적"
     },
     questionType: {
       type: String,
-      default: 'openEnded'
+      default: "openEnded"
     },
     questionPredicate: {
       type: String,
-      default: ''
+      default: ""
     },
     emailType: {
       type: Boolean,
@@ -106,27 +98,25 @@ export default {
       default: () => []
     }
   },
-  data () {
+  data() {
     return {
       valid: false,
       items: [
-        { title: '돈', subTitle: '경제적 안정' },
-        { title: '집', subTitle: '가족 간 배려, 소통' },
-        { title: '일', subTitle: '전문성/직업의 연속성' },
-        { title: '벗', subTitle: '외롭지 않는 삶. 네트웍' },
-        { title: '낙', subTitle: '즐거운 꺼리들' },
-        { title: '건강', subTitle: '몸과 마음의 건강' }
+        { title: "돈", subTitle: "경제적 안정" },
+        { title: "집", subTitle: "가족 간 배려, 소통" },
+        { title: "일", subTitle: "전문성/직업의 연속성" },
+        { title: "벗", subTitle: "외롭지 않는 삶. 네트웍" },
+        { title: "낙", subTitle: "즐거운 꺼리들" },
+        { title: "건강", subTitle: "몸과 마음의 건강" }
       ]
-    }
+    };
   },
   methods: {
-    next () {
-      this.$emit('next')
-
+    next() {
+      this.$emit("next");
     }
-  },
-
-}
+  }
+};
 </script>
 
 <style lang="scss">

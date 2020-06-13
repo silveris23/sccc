@@ -1,13 +1,7 @@
 <template>
-  <v-form
-    ref="form"
-    v-model="valid"
-    :lazy-validation="lazy"
-  >
-    <v-card flat>
-      <v-card-title class="display-3 font-weight-bold q-message">
-        {{`${qNumber}.  ${qMessage}`}}
-      </v-card-title>
+  <v-form ref="form" v-model="valid" :lazy-validation="lazy">
+    <v-card flat color="transparent">
+      <v-card-title class="display-3 font-weight-bold q-message">{{`${qNumber}. ${qMessage}`}}</v-card-title>
       <div class="d-flex">
         <div style="width: 100%">
           <v-text-field
@@ -21,10 +15,8 @@
             @keyup.enter="confirm"
           />
         </div>
-        <div
-          v-if="qPredicate.length > 0"
-          class="headline pt-5"
-        > <span>{{qPredicate}}</span>
+        <div v-if="qPredicate.length > 0" class="headline pt-5">
+          <span>{{qPredicate}}</span>
         </div>
       </div>
     </v-card>
@@ -35,17 +27,14 @@
         width="100"
         class="headline white--text"
         @click="confirm"
-      >확인<v-icon right>mdi-check</v-icon>
-      </v-btn>
-      <v-btn
-        text
-        color="grey"
-        class="title"
-        v-if="valid"
       >
-        Enter 키를 눌러주세요 <v-icon>mdi-keyboard-return</v-icon>
+        확인
+        <v-icon right>mdi-check</v-icon>
       </v-btn>
-
+      <v-btn text color="grey" class="title" v-if="valid">
+        Enter 키를 눌러주세요
+        <v-icon>mdi-keyboard-return</v-icon>
+      </v-btn>
     </v-card-actions>
   </v-form>
 </template>
@@ -55,7 +44,7 @@ export default {
   props: {
     qId: {
       type: String,
-      default: ''
+      default: ""
     },
     qNumber: {
       type: String,
@@ -63,16 +52,15 @@ export default {
     },
     qMessage: {
       type: String,
-      default: ''
+      default: ""
     },
     qTitle: {
       type: String,
-      default: ''
+      default: ""
     },
     qPredicate: {
       type: String,
-      default: ''
-
+      default: ""
     },
     emailType: {
       type: Boolean,
@@ -81,35 +69,33 @@ export default {
     maxText: {
       type: Number,
       default: 10
-    },
+    }
   },
-  data () {
+  data() {
     return {
       valid: true,
-      answer: '',
+      answer: "",
       lazy: false,
       rules: {
-        required: value => !!value || '꼭 써주셔야 합니다',
-        counter: value => value.length <= 20 || '최대 20 글자까지 해주세요',
+        required: value => !!value || "꼭 써주셔야 합니다",
+        counter: value => value.length <= 20 || "최대 20 글자까지 해주세요",
         emailRules: value => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Invalid e-mail.'
-        },
-
+          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return pattern.test(value) || "Invalid e-mail.";
+        }
       }
-    }
+    };
   },
   methods: {
-    confirm () {
-      this.valid && this.$emit('nextSlide')
+    confirm() {
+      this.valid && this.$emit("nextSlide");
     }
   }
-}
-
+};
 </script>
 
 <style>
-.q-message{
+.q-message {
   color: #5878b8;
 }
 </style>
