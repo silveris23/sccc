@@ -4,12 +4,12 @@
     v-model="valid"
     :lazy-validation="lazy"
   >
-    <v-card color="#13547a">
-      <v-card-title class="headline font-weight-bold">
+    <v-card flat>
+      <v-card-title class="display-3 font-weight-bold q-message">
         {{`${qNumber}.  ${qMessage}`}}
       </v-card-title>
       <div class="d-flex">
-        <div style="width: 300px">
+        <div style="width: 100%">
           <v-text-field
             class="mx-5"
             v-model="answer"
@@ -30,11 +30,10 @@
     </v-card>
     <v-card-actions>
       <v-btn
-        color="pink"
-        large
+        color="#5878b8"
         :disabled="!valid"
         width="100"
-        class="title"
+        class="headline white--text"
         @click="confirm"
       >확인<v-icon right>mdi-check</v-icon>
       </v-btn>
@@ -110,4 +109,7 @@ export default {
 </script>
 
 <style>
+.q-message{
+  color: #5878b8;
+}
 </style>

@@ -1,7 +1,5 @@
 <template>
   <v-card
-    color="#13547a"
-    dark
     height="100%"
     width="100%"
   >
@@ -11,15 +9,19 @@
       src="https://picsum.photos/1024/640?random"
       gradient="to top right, rgba(19,84,122,1), rgba(128,208,199,.5)"
     > -->
-    <v-card-title>
-      <v-icon
-        large
-        left
-      >
-        mdi-comment-question-outline
-      </v-icon>
-      <span class="title">{{questionCategory}}</span>
-    </v-card-title>
+    <div class="d-flex justify-space-between">
+      <div class="d-flex survey-category">
+        <v-icon
+          large
+          left
+          color="secondary"
+        >
+          mdi-comment-question-outline
+        </v-icon>
+        <span>{{questionCategory}}</span>
+      </div>
+      <div class="survey-category-border"></div>
+    </div>
     <open-ended-survey
       class="mx-6"
       v-if="questionType === 'openEnded'"
@@ -67,7 +69,7 @@ export default {
       type: String,
       default: 'Master'
     },
-    questionSubCategory:{
+    questionSubCategory: {
       type: String,
       default: ''
     },
@@ -101,7 +103,7 @@ export default {
     },
     answerList: {
       type: Array,
-      default: ()=> []
+      default: () => []
     }
   },
   data () {
@@ -127,5 +129,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.survey-category {
+  font-weight: 900 !important;
+  color: #70cae9;
+  font-size: 24px;
+}
+.survey-category-border {
+  margin: 0px 20px;
+  border-bottom: 1px solid #70cae9;
+  flex-basis: 80%;
+}
 </style>
